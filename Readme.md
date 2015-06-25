@@ -7,5 +7,6 @@
 
     git clone git@github.com:chriso2014/technicalTest
     cd technicalTest
+    rm -rf node_modules
     npm install
     node app.js

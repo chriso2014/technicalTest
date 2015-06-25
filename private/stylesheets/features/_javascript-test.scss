@@ -1,0 +1,47 @@
+.flickr-container {
+  display: block;
+}
+.flickr_item {
+  display: inline-block;
+  width: 25%;
+  box-sizing: border-box;
+  vertical-align: top;
+  padding-right:20px;
+  margin-bottom:20px;
+  position: relative;
+  overflow: hidden;
+  cursor:pointer;
+
+  img{
+    opacity:1;
+    -webkit-transition: opacity 0.50s;
+    transition: opacity 0.50s;
+  }
+
+  &:after{
+    content:'Selected';
+    z-index: 3;
+    position:absolute;
+    left:100%;
+    bottom:10px;
+    padding:5px 8px;
+    background-color: $color--purple;
+    color: $color--white;
+    -webkit-transition: left 0.25s;
+    transition: left 0.25s;
+
+  }
+  img{
+    max-width:100%;
+    width:100%;
+    display: block;
+  }
+  &.active{
+    img{
+      opacity:0.5;
+    }
+    &:after{
+      left: 10px;
+    }
+  }
+}

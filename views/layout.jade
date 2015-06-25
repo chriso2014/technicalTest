@@ -1,0 +1,28 @@
+doctype
+html
+  head
+    meta(charset='utf-8')
+    meta(http-equiv='x-ua-compatible', content='ie=edge')
+    title=title
+    meta(name='description', content='This is the micro site test from Chris Ormerod')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+
+    link(href='http://fonts.googleapis.com/css?family=PT+Serif:400,700', rel='stylesheet', type='text/css')
+    link(rel='stylesheet', href='/stylesheets/style.css')
+
+  body(class=page)
+
+    block ally-navigation
+
+    block header
+
+    main.main-content(role='main', id='main')
+      .container
+        article
+          block content
+          aside.content-secondary
+            block sidebar
+
+    footer.main-footer(role='contentinfo')
+      .container
+        block footer

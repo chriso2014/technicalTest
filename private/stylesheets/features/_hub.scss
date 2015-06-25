@@ -1,0 +1,70 @@
+.homepage {
+  counter-reset: test;
+  header{
+    background-color: $color--grey--light;
+    padding: 20px;
+    border-bottom: 2px solid $color--grey;
+    margin-bottom:30px;
+  }
+  .considerations{
+    border-top: 2px solid $color--grey;
+    padding: 20px 0;
+    margin-top:60px;
+  }
+  h1{
+    margin-bottom:0;
+    color: $color--grey;
+  }
+  .content-primary{
+    width: 100%;
+    display: block;
+    padding: 30px 0;
+
+  }
+  .content-secondary{
+    display: none;
+  }
+
+  .hub-links{
+    margin:30px 0;
+    padding:0;
+    li{
+      list-style-type:none;
+      display: inline-block;
+      padding:0 30px 0 0;
+      margin: 0;
+    }
+    a{
+      @include rem("font-size", 22);
+      font-weight: 700;
+      color: $color--grey;
+      text-decoration: none;
+
+      &:before{
+        color: $color--white;
+        counter-increment: test;
+        content: counter(test);
+        display: block;
+        @include rem("font-size", 34);
+        width:60px;
+        height:60px;
+        background-color: $color--orange;
+        border-radius: 50%;
+        border: 2px solid $color--orange;
+        margin:0 auto 12px;
+        padding-top: 8px;
+        text-align: center;
+        -webkit-transition: all 0.75s;
+        transition: all 0.75s;
+      }
+
+      &:hover, &:focus{
+        &:before{
+          background-color: $color--white;
+          color: $color--orange;
+        }
+      }
+
+    }
+  }
+}

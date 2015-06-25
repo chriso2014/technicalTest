@@ -1,0 +1,100 @@
+extend layout
+
+block ally-navigation
+  .a11y-navigation
+    a(href='#main') Jump to Main Content
+    a(href='#navigation') Jump to Primary Navigation
+
+block header
+  header.main-header(role='banner')
+    .container
+      .site-title
+        a.site-logo(href='/') J Sainsbury plc
+
+    nav#navigation.main-navigation(role='navigation', aria-label='Primary Navigation')
+      .container
+        h2.vhidden Primary Navigation
+
+        label(for='mobile-navigation').mobile-navigation Menu
+        input(type='checkbox', id='mobile-navigation', name='mobile-navigation', value='').mobile-checkbox
+
+        ul
+          li
+            a(href='/') Home
+          li
+            a(href='/') eBooks
+          li
+            a(href='/') Magazines
+          li
+            a(href='/') Movies
+          li
+            a(href='/') Help
+          li
+            a(href='/') Login
+
+block content
+  .content-primary
+    header.article__header
+      h1 Lorem Ipsum Dolor Sit
+      p Posted on 
+        span 15 May 2015 
+        | by 
+        a(href='') Author
+
+    section.article__body
+      .article__image
+        img(src='/images/pho-sainsburys-store.jpg', alt='Outside a Sainsburys store')
+
+      .article__content
+        .article__links
+          h2 More...
+          ul
+            li
+              a(href='') Link #1
+            li
+              a(href='') Another link
+            li
+              a(href='') Third link
+        p
+          | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam facilisis
+          | nulla porttitor leo commodo, in ultrices ante rutrum. Donec at bibendum
+          | ligula. Nunc varius ex et eros maximus, id blandit dolor sollicitudin.
+          | In imperdiet arcu aliquet lacus rhoncus, id gravida mi congue. 
+          | Donec ultricies ornare mi. Morbi rhoncus eros turpis, interdum 
+          | pretium ex suscipit ut. Fusce mollis id arcu vitae vehicula. 
+          | Sed imperdiet porta sagittis. In vestibulum, nisi sit amet ullamcorper 
+          | pellentesque, quam eros pharetra elit, ut mollis lorem mauris tristique
+          | mauris. Duis vitae eleifend tortor, ac accumsan leo. Nullam id 
+          | imperdiet eros. Etiam finibus ipsum eu purus commodo rhoncus. 
+          | Praesent interdum ante sagittis ultricies cursus. Quisque tempor augue
+          | et laoreet sagittis. Phasellus tristique velit ligula, et elementum dolor 
+          | porta id. In iaculis sagittis risus, non consequat elit congue nec.
+        p
+          | Donec congue lacinia dui, a porttitor
+          | lectus condimentum laoreet. Nunc eu
+          | ullamcorper orci. Quisque eget odio ac
+          | lectus vestibulum faucibus eget in metus.
+          | In pellentesque faucibus vestibulum. Nulla
+          | at nulla justo, eget luctus tortor.
+      
+block sidebar
+  a.article__secondary__link(href='')
+    h2 A guide to snoopsetting
+    .article__secondary__img
+      img(src='/images/pho-sustainabilty.jpg', alt='Fruit and vegetables')
+
+  a.article__secondary__link(href='')
+    h2 Welcome to the Surveillance State
+    .article__secondary__img
+      img(src='/images/pho-sainsburys-van.jpg', alt='A Sainsburys Van')
+
+block footer
+  nav.social-navigation(aria-label='Social Navigation')
+    h2.vhidden Social Navigation
+    ul
+      li
+        a.icon-facebook(href='/') Facebook
+      li
+        a.icon-twitter(href='/') Twitter
+      li
+        a.icon-google-plus(href='/') Google plus

@@ -1,0 +1,31 @@
+extend layout
+
+block header
+  header
+    .container
+      h1 Testing platform for Chris Ormerod
+
+block content
+  h2 Click on link below to view test
+  ul.hub-links
+    li
+      a(href='/test1') HTML5 and CSS test
+
+     li
+      a(href='/test2') JavaScript test
+
+  .considerations
+    h2 HTML5 and CSS test
+    p Tested: Safari(Mac), Chrome(Mac), Firefox(Mac), IOS 8 iPhone 6, IOS 7 iPhone 5 
+    p Only contentious decision I made was to make the social bar a footer as it 
+      | features at the top on desktop, however I felt if I approached the site mobile first
+      | then the structure should match the mobile wireframe.
+    p The mobile drop down is pure CSS but I would use JavaScript normally.
+    p I usually alphabetise css items but due to time restrictions sacrificed this
+      | so I didn't over run 2hrs too much.
+
+    h2 JavaScript test
+    p Tested: Safari(Mac), Chrome(Mac), Firefox(Mac)
+    P I decided to use local storage but toyed with the idea of using history api
+     | url manipulation. I felt local storage would match the brief more.
+    p I do use jQuery for DOM manipulation usually.

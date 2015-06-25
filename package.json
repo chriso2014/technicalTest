@@ -1,0 +1,31 @@
+{
+  "name": "technicalTest",
+  "version": "0.0.1",
+  "description": "Completed two tiered test of coding practices",
+  "private" : "true",
+  "dependencies": {
+    "express": "3.0.0alpha4",
+    "jade": "*",
+    "sass": "*",
+    "node-sass": "*",
+    "node-sass-middleware": "*",
+    "path": "*"
+  },
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: technicalTest\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/chriso2014/technicalTest.git"
+  },
+  "keywords": [
+    "technicalTest"
+  ],
+  "author": "Chris Ormerod",
+  "license": "Chris Ormerod",
+  "bugs": {
+    "url": "https://github.com/chriso2014/technicalTest/issues"
+  },
+  "homepage": "https://github.com/chriso2014/technicalTest"
+}

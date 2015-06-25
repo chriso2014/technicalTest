@@ -1,0 +1,55 @@
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: $secondary--font-family;
+  -webkit-backface-visibility: hidden;
+  background-color: $color--white;
+}
+
+body, article, aside, details, figcaption, figure, footer, header, main, menu, nav, section, summary {
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3, h4 {
+  margin-bottom: $base--spacing;
+}
+
+p{
+  margin:0 0 20px 0;
+}
+
+li {
+  list-style-position: outside;
+  margin-left: 2em;
+}
+
+ol, ul {
+  margin-bottom: 0;
+}
+
+nav {
+  ul, ol {
+    margin-bottom: 0;
+  }
+  li {
+    list-style: none;
+    margin-left: 0;
+  }
+}
+
+a, a:visited{
+  text-decoration: underline;
+  &:hover, &:focus{
+    text-decoration: none;
+  }
+}
+
+img {
+  border: 0;
+  display: block;
+  max-width: 100%;
+}

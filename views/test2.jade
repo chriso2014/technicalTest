@@ -1,0 +1,83 @@
+html
+  head
+    link(href='http://fonts.googleapis.com/css?family=PT+Serif:400,700', rel='stylesheet', type='text/css')
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    script(type='text/javascript').
+      var selectImageArray = [];
+
+      function selectImage(item) {
+
+        var imageItem = document.getElementById(item);
+        var arrayPosition = selectImageArray.indexOf(item);
+        // if it is in array then its selected
+        if(arrayPosition === -1){
+          // add selected and push to array
+          imageItem.classList.add("active");
+          selectImageArray.push(item);
+        }else{
+          // remove selected and remove from array
+          selectImageArray.splice(arrayPosition, 1);
+          imageItem.className = "flickr_item";
+        }
+        // update localStorage with array in stringify form
+        localStorage["flickrImages"] = JSON.stringify(selectImageArray);
+      }
+
+      function cb(data){
+
+        var flickrContainer = document.getElementById("flickr");
+
+        /* read localStorage and parse into array so that previous
+           selected items are already in the selected array
+        */
+        function findPreviousImages() {
+          if (localStorage.getItem("flickrImages") !== null) {
+            selectImageArray = JSON.parse(localStorage["flickrImages"]);
+          }
+          // initial the for loop to populate the page
+          initImages(selectImageArray);
+        }
+
+        function initImages(getArray) {
+          var selectArray = getArray;
+          var output = "";
+
+          // loop through items from json file
+          for(var key in data.items){
+            var attrImgSrc = data.items[key].media.m;
+            // gain unique number of image file for further use
+            var attrImgId = data.items[key].link.slice(-12);
+            attrImgId = parseInt(attrImgId.substring(0, attrImgId.length - 1))
+
+            // add active state if item appears in the array (from localstorage)
+            var classes = 'flickr_item';
+            if(selectArray != undefined){
+              if(selectArray.indexOf(attrImgId) !== -1){
+                classes += ' active';
+              }
+            }
+
+            output += '<div class="'+ classes +'" id="'+ attrImgId +'" onClick="selectImage('+ attrImgId +')"><img src="' + attrImgSrc + '" /></div>';
+          }
+          // output the html
+          flickrContainer.innerHTML = output;
+        }
+        // start the process
+        findPreviousImages();
+
+      }
+
+      (function(){
+
+        var tags='london';
+        var script=document.createElement('script');
+
+        script.src='http://api.flickr.com/services/feeds/photos_public.gne?format=json&jsoncallback=cb&tags='+tags;
+
+        document.head.appendChild(script);
+
+      })();
+
+  body
+    .container
+      .flickr-container#flickr

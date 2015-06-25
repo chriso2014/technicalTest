@@ -1,0 +1,55 @@
+.main-header {
+  background-color: $color--orange;
+  color: $color--white;
+  @include rem("padding-top", 10);
+}
+
+.site-title {
+  font-family: $primary--font-family;
+  @include rem("font-size", 22);
+  line-height: 1em;
+  font-weight: 700;
+  display: inline-block;
+  vertical-align: middle;
+  text-align: center;
+  position: relative;
+  z-index: 5;
+
+  &:before {
+    border: 5px solid $color--purple;
+    background-color: $color--white;
+    background-repeat: no-repeat;
+    background-size: 80% auto;
+    background-image:url('/images/site-logo.png');
+    background-position: 50% 50%;
+    display: inline-block;
+    content: '';
+    @include rem("width", 80);
+    @include rem("height", 80);
+    @include rem("margin-right", 20);
+
+    border-radius: 50%;
+    vertical-align: middle;
+  }
+}
+
+.site-logo {
+  text-decoration: none;
+  color: $color--white;
+}
+
+@include width-max($mq--mobile--landscape - 1) {
+  .main-header {
+    text-align: center;
+  }
+}
+
+@include width-min($mq--mobile--landscape) {
+  .site-title {
+    @include rem("font-size", 40);
+    &:before {
+      @include rem("width", 120);
+      @include rem("height", 120);
+    }
+  }
+}
